@@ -19,7 +19,7 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Note on leaf"
 title_separator          : "|"
-subtitle                 : "Small pices for BIG ONE."
+subtitle                 : "Small pieces for BIG ONE."
 name                     : "on-leaf"
 description              : "Blog of on-leaf"
 url                      : "https://on-leaf.github.io"
