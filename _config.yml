@@ -107,7 +107,7 @@ social:
 analytics:
   provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "G-HDH663CJDB"
+    tracking_id          : "G-689TQG26FZ"
     anonymize_ip         : false # true, false (default)
 
 
