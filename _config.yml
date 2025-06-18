@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "on-leaf"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/images/profile_image.png"
   bio              : ""
   location         : "Republic of Korea"
   email            :
