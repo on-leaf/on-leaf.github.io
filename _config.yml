@@ -325,3 +325,9 @@ defaults:
       share: true
       related: true
       show_date: true
+
+      # Settings for toc
+      toc: true
+      toc_sticky: true
+      toc_label: CONTENTS
+      toc_icon: "fa-solid fa-tree" # More icons: https://fontawesome.com/v6/search?ic=free
