@@ -18,8 +18,9 @@ docs:
       url: /tags/
 
 counts:
-  - title: "Category"
+  - title: "Branches"
     use: true
+    icon: "fa-solid fa-tree"
   - title: "Tag"
     use: false
 

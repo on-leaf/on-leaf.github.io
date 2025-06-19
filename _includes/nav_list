@@ -19,14 +19,17 @@
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
   <ul class="nav__items">
-    <span class="nav__sub-title">{{ navigation[0].title }}</span>
+    <span class="nav__sub-title">
+      {%- if navigation[0].icon -%}<i class="{{ navigation[0].icon }}" aria-hidden="true" style="color: #015f06;"></i> {% endif -%}{{ navigation[0].title }}
+    </span>
     <li>
       {% for i in (1..categories_max) reversed %}
         {% for category in site.categories %}
           {% if category[1].size == i %}
             <ul style="padding-top: 0px; padding-bottom: 0px;">
               <a href="/categories/#{{ category[0] | slugify }}">
-                <strong style="font-size: 16px;">{{ category[0] }}</strong> <span class="taxonomy__count" style="font-size: 14px;">{{ i }}</span>
+                <i class="fa-solid fa-leaf" aria-hidden="true" style="color: #02a50a;"></i> {{ category[0] }}
+                </strong> <span class="taxonomy__count" style="font-size: 14px;">{{ i }}</span>
               </a>
             </ul>
           {% endif %}
