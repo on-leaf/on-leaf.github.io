@@ -49,7 +49,7 @@ layout: default
           </aside>
         {% endif %}
         {%- assign assets_path = "/images" | prepend: site.baseurl -%}
-        {{ content | replace: "../images", assets_path }} <!--{{ content }}-->
+        {{ content | replace: "../images", assets_path }} 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>
 
