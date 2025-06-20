@@ -1,0 +1,6 @@
+<!-- _includes/start-side-by-side.html -->
+<div class="side-by-side">
+  <div class="image" style="flex: 0 0 {{ include.image_width | default: '50%' }};">
+    <img src="{{ include.image_src | relative_url }}" alt="{{ include.image_alt | default: 'Image' }}">
+  </div>
+  <div class="text">
