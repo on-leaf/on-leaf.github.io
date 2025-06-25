@@ -14,7 +14,6 @@ search: false
   display: flex; /* Flexbox 레이아웃 활성화 */
   align-items: center; /* 수직 중앙 정렬 (가장 중요한 부분!) */
   gap: 1.5em; /* 이미지와 텍스트 사이의 간격 */
-  margin-bottom: 1.5em; /* 전체 컨테이너 아래쪽 여백 */
 }
 
 .side-by-side .image figcaption {
