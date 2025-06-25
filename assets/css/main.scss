@@ -15,7 +15,6 @@ search: false
   align-items: center; /* 수직 중앙 정렬 (가장 중요한 부분!) */
   gap: 1.5em; /* 이미지와 텍스트 사이의 간격 */
 }
-
 .side-by-side .image figcaption {
   display: block; /* figcaption을 확실한 블록 요소로 만듦 */
   width: 100%; /* 부모(figure)의 너비를 100% 채우도록 함 */
@@ -41,4 +40,39 @@ search: false
   border-radius: 4px;
   padding: 1em;             /* 안쪽 여백은 조금 더 작게 */
   margin: 1em 0;            /* 위아래 바깥 여백 (바깥 박스 내에서) */
+}
+
+
+/* table-generator.html 에서 사용하는 표 스타일 */
+.table-wrapper {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.table-wrapper table {
+  /* 1. 레이아웃 알고리즘을 'fixed'로 변경하여 열 너비를 균등하게 만듦 */
+  table-layout: fixed;
+  
+  /* 2. 표 전체 너비를 명확하게 지정 */
+  width: 60%;
+  
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 12px 15px;
+  border: 1px solid mix(#ac7500, #40514e, 75%);
+  
+  /* 3. 'fixed' 레이아웃에서 내용이 넘칠 수 있으므로 줄 바꿈 속성은 필수 */
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+.table-wrapper th {
+  background-color: #eaffe7;
+  font-weight: bold;
 }
