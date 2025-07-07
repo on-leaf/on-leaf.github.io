@@ -1,11 +1,29 @@
 <!-- _includes/start-side-by-side.html -->
-<div class="side-by-side">
-  <div class="image" style="flex: 0 0 {{ include.image_width | default: '50%' }};">
+
+{% comment %}
+  --- 로직 시작: 캡션 존재 여부에 따라 기본 margin-bottom 값을 결정 ---
+  1. 먼저, image_alt(캡션)가 있는지 확인합니다.
+  2. 있으면 기본값을 -2em, 없으면 -4em으로 설정합니다.
+  3. 마지막으로, 사용자가 margin_bottom 파라미터를 직접 넘겨줬다면 그 값을 최종적으로 사용합니다.
+{% endcomment %}
+{%- if include.image_alt and include.image_alt != " " -%}
+  {%- assign default_margin_bottom = '-2em' -%}
+{%- else -%}
+  {%- assign default_margin_bottom = '-4em' -%}
+{%- endif -%}
+
+{%- assign final_margin_bottom = include.margin_bottom | default: default_margin_bottom -%}
+
+
+<div class="side-by-side" style="margin-bottom: {{ include.margin_bottom_container | default: '0' }};"> 
+  <div class="image" style="flex: 0 0 {{ include.image_width | default: '50%' }};
+                            margin-top: {{ include.margin_top | default: '-2em' }};
+                            margin-bottom: {{ final_margin_bottom }};">
     <figure>
       <img src="{{ include.image_src | relative_url }}" alt="{{ include.image_alt | default: 'Image' }}">
-      {%- if include.image_alt -%}
+      {%- if include.image_alt and include.image_alt != " " -%}
         <figcaption>{{ include.image_alt }}</figcaption>
-      {%- endif -%}
+      {%- endif -%} 
     </figure>
   </div>
-  <div class="text">
+  <div class="text" markdown="1"> 
