@@ -76,3 +76,21 @@ search: false
   background-color: #eaffe7;
   font-weight: bold;
 }
+
+
+/* 텍스트 문단 들여쓰기를 위한 유틸리티 클래스 */
+.page__content .indented-paragraph {
+  position: relative; /* ::before 위치의 기준점이 됨 (매우 중요!) */
+  padding-left: 3em;
+  font-size: 0.8em;
+}
+
+/* .indented-paragraph 요소의 내용물 앞에 화살표를 자동으로 추가 */
+.indented-paragraph::before {
+  content: "→"; /* 여기에 표시할 문자나 기호를 넣음 */
+  position: absolute; /* 부모 요소를 기준으로 위치를 자유롭게 지정 */
+  left: 1em; /* 부모(.indented-paragraph)의 왼쪽 끝에 배치 */
+  top: 0; /* 부모의 위쪽 끝에 배치 (첫 줄과 높이를 맞춤) */
+  font-weight: bold; /* 화살표를 더 잘 보이게 (선택 사항) */
+  color: #555; /* 화살표 색상 (선택 사항) */
+}
