@@ -1,4 +1,7 @@
 <!-- _includes/start-box.html -->
 <div class="{{ include.class }}" 
-     style="font-size: {{ include.font_size | default: 'inherit' }};" 
+     style="
+       font-size: {{ include.font_size | default: 'inherit' }};
+       margin-bottom: {{ include.margin_bottom | default: '2em' }};
+     " 
      markdown="1">
