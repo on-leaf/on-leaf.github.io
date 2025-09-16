@@ -79,8 +79,9 @@ search: false
 }
 
 .table-wrapper th {
-  background-color: #eaffe7;
+  background-color: #8B4513; /* SaddleBrown 색상 (어두운 갈색 예시) */
   font-weight: bold;
+  color: white;
 }
 
 
@@ -99,4 +100,11 @@ search: false
   top: 0; /* 부모의 위쪽 끝에 배치 (첫 줄과 높이를 맞춤) */
   font-weight: bold; /* 화살표를 더 잘 보이게 (선택 사항) */
   color: #555; /* 화살표 색상 (선택 사항) */
+}
+
+/* .math-box 내부에 있는 table 요소를 중앙 정렬 */
+.math-box table {
+  width: 70%;
+  margin-left: 12em;
+  // margin-right: auto;
 }
