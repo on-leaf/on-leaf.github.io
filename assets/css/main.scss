@@ -49,39 +49,39 @@ search: false
 }
 
 
-/* table-generator.html 에서 사용하는 표 스타일 */
-.table-wrapper {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
+// /* table-generator.html 에서 사용하는 표 스타일 */
+// .table-wrapper {
+//   margin-top: 2em;
+//   margin-bottom: 2em;
+// }
 
-.table-wrapper table {
-  /* 1. 레이아웃 알고리즘을 'fixed'로 변경하여 열 너비를 균등하게 만듦 */
-  table-layout: fixed;
+// .table-wrapper table {
+//   /* 1. 레이아웃 알고리즘을 'fixed'로 변경하여 열 너비를 균등하게 만듦 */
+//   table-layout: fixed;
   
-  /* 2. 표 전체 너비를 명확하게 지정 */
-  width: 60%;
+//   /* 2. 표 전체 너비를 명확하게 지정 */
+//   width: 60%;
   
-  margin-left: auto;
-  margin-right: auto;
-  border-collapse: collapse;
-  text-align: left;
-}
+//   margin-left: auto;
+//   margin-right: auto;
+//   border-collapse: collapse;
+//   text-align: left;
+// }
 
-.table-wrapper th,
-.table-wrapper td {
-  padding: 12px 15px;
-  border: 1px solid mix(#ac7500, #40514e, 75%);
+// .table-wrapper th,
+// .table-wrapper td {
+//   padding: 12px 15px;
+//   border: 1px solid mix(#ac7500, #40514e, 75%);
   
-  /* 3. 'fixed' 레이아웃에서 내용이 넘칠 수 있으므로 줄 바꿈 속성은 필수 */
-  word-break: break-all;
-  overflow-wrap: break-word;
-}
+//   /* 3. 'fixed' 레이아웃에서 내용이 넘칠 수 있으므로 줄 바꿈 속성은 필수 */
+//   word-break: break-all;
+//   overflow-wrap: break-word;
+// }
 
-.table-wrapper th {
-  background-color: #eaffe7;
-  font-weight: bold;
-}
+// .table-wrapper th {
+//   background-color: #eaffe7;
+//   font-weight: bold;
+// }
 
 
 /* 텍스트 문단 들여쓰기를 위한 유틸리티 클래스 */
@@ -101,9 +101,63 @@ search: false
   color: #555; /* 화살표 색상 (선택 사항) */
 }
 
-/* .math-box 내부에 있는 table 요소를 중앙 정렬 */
+// /* .math-box 내부에 있는 table 요소를 중앙 정렬 */
+// .math-box table {
+//   width: auto;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+
+// /* 추가적으로, 긴 내용이 셀을 벗어나지 않도록 줄 바꿈도 함께 적용하는 것이 좋습니다. */
+// .page__content th,
+// .page__content td {
+//   word-break: break-all;
+//   overflow-wrap: break-word;
+// }
+
+/* ==========================================================================
+   Truly Final Unified Table Styles (모든 경우를 처리하는 최종 수정)
+   ========================================================================== */
+
+/*
+  1. .table-wrapper (일반 표/table-generator)와 
+     .math-box 안의 표(<table>) 자체를 모두 선택하여 중앙 정렬합니다.
+*/
+.table-wrapper,
 .math-box table {
-  width: 70%;
-  margin-left: 12em;
-  // margin-right: auto;
+  max-width: 100%;      /* 컨테이너 또는 표 자체의 최대 너비를 80%로 제한 */
+  margin-left: auto;   /* 좌우 여백을 자동으로 설정하여 중앙 정렬 */
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+/* 
+  2. 모든 테이블의 공통적인 내부 스타일.
+*/
+.page__content table {
+  width: 100%; /* 부모 컨테이너(위에서 설정한 것)의 너비를 100% 채움 */
+  table-layout: fixed;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+/* 
+  3. 모든 테이블의 셀(th, td)에 공통 스타일 적용.
+*/
+.page__content th,
+.page__content td {
+  padding: 12px 15px;
+  border: 1px solid mix(#ac7500, #40514e, 75%);
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+/*
+  4. 모든 테이블의 헤더(th)에 공통 스타일 적용.
+*/
+.page__content th {
+  background-color: #eaffe7;
+  font-weight: bold;
+  /* 헤더 글자색을 바꾸려면 여기에 color: white; 를 추가 */
 }
