@@ -1,21 +1,15 @@
-<!-- _includes/table-generator.html -->
-{% comment %}
-  This include generates an HTML table from CSV data.
-  Usage: {% include table-generator.html data=my_captured_data %}
-{% endcomment %}
-
 {%- assign table_data = include.data | strip -%}
 {%- assign lines = table_data | split: '
 ' -%}
 
-<div class="table-wrapper">
-  <table>
+<div class="table-wrapper" style="display: flex; justify-content: center; width: 100%; margin: 2em 0;">
+  
+  <table style="width: auto !important; margin-left: auto !important; margin-right: auto !important; display: table !important;">
     <thead>
       <tr>
         {%- assign header_row = lines[0] | split: ',' -%}
         {%- for header in header_row -%}
-          <th>{{ header | strip }}</th>
-        {%- endfor -%}
+          <th style="text-align: center;">{{ header | strip }}</th> {%- endfor -%}
       </tr>
     </thead>
     <tbody>
